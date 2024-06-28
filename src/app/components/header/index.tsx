@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MobileMenu } from '../mobile-menu'
+import { MobileMenu } from '../Mobile-Menu'
 
 export const Header = () => {
   return (

@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	font-size: 18px;
+}
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }

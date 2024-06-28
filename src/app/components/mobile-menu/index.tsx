@@ -3,7 +3,7 @@ import Link from "next/link";
 export const MobileMenu = () => {
 	return (
 		<nav className="bg-custom-dark-violet flex flex-col items-center w-[85%] max-w-[85%] p-4 text-white rounded-lg min-h-80 gap-4 font-bold">
-			<ul className="flex flex-col items-center justify-center border-b-[0.5px] border-b-custom-gray gap-8 w-full p-6">
+			<ul className="flex flex-col items-center justify-center border-b-[0.5px] border-b-custom-grayish-violet gap-8 w-full p-6">
 				<li>
 					<Link href="#">Features</Link>
 				</li>
