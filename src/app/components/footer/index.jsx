@@ -11,13 +11,19 @@ export const Footer = () => {
 				<h1 className="text-sm">Features</h1>
 				<ul className="text-sm text-custom-grayish-violet text-center flex flex-col gap-2 md:items-start">
 					<li>
-						<Link href="#">Link shortening</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Link shortening
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Branded Links</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Branded Links
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Analytics</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Analytics
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -25,13 +31,19 @@ export const Footer = () => {
 				<h1 className="text-sm">Resources</h1>
 				<ul className="text-sm text-custom-grayish-violet text-center flex flex-col gap-2 md:items-start">
 					<li>
-						<Link href="#">Blog</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Blog
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Developers</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Developers
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Support</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Support
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -39,16 +51,24 @@ export const Footer = () => {
 				<h1 className="text-sm">Company</h1>
 				<ul className="text-sm text-custom-grayish-violet text-center flex flex-col gap-2 md:items-start">
 					<li>
-						<Link href="#">About</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							About
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Our Team</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Our Team
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Careers</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Careers
+						</Link>
 					</li>
 					<li>
-						<Link href="#">Contact</Link>
+						<Link href="#" className="hover:text-custom-cyan">
+							Contact
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -64,6 +84,7 @@ export const Footer = () => {
 								width={20}
 								height={20}
 								alt="facebook icon"
+								className="hover:bg-custom-cyan"
 							/>
 						</a>
 					</li>
@@ -73,6 +94,7 @@ export const Footer = () => {
 							width={20}
 							height={20}
 							alt="twitter icon"
+							className="hover:bg-custom-cyan"
 						/>
 					</li>
 					<li>
@@ -81,6 +103,7 @@ export const Footer = () => {
 							width={20}
 							height={20}
 							alt="pinterest icon"
+							className="hover:bg-custom-cyan"
 						/>
 					</li>
 					<li>
@@ -90,6 +113,7 @@ export const Footer = () => {
 								width={20}
 								height={20}
 								alt="instagram icon"
+								className="hover:bg-custom-cyan"
 							/>
 						</a>
 					</li>

@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import Link from "next/link";
 import { CardsSection } from "./components/CardsSection";
+import { SavedLink } from "./components/SavedLink";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 						our advanced statistics dashboard.
 					</p>
 				</section>
+				<SavedLink />
 				<CardsSection />
 				<section className="flex flex-col items-center justify-center text-white h-60 bg-blend-color-dodge bg-custom-dark-violet bg-cover bg-no-repeat bg-custom-mobile gap-4 md:bg-custom-desktop">
 					<h1 className="text-2xl font-bold">
