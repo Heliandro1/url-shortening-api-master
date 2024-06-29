@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
 	return (
-		<footer className="bg-custom-very-dark-violet text-white w-screen flex flex-col gap-8 py-14 md:flex-row md:px-4 lg:gap-0 lg:justify-start">
+		<footer className="bg-custom-very-dark-violet text-white w-full flex flex-col gap-8 py-14 md:flex-row md:px-4 lg:gap-0 lg:justify-start">
 			<section className="w-full flex items-center justify-center md:items-start md:min-w-[24%] lg:min-w-[40%] lg:w-auto">
 				<h1 className="text-2xl font-bold text-center">Shortly</h1>
 			</section>
