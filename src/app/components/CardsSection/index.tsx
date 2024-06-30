@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const CardsSection = () => {
 	return (
-		<section className="w-full flex flex-col items-center justify-center px-4 lg:flex-row">
+		<section className="w-full flex flex-col items-center justify-center px-4 lg:flex-row mb-32 mt-10">
 			<div className="bg-white rounded-md flex flex-col items-center justify-center h-56 px-4 w-full lg:items-start lg:px-6 lg:w-fit">
 				<div className="bg-custom-dark-violet w-16 h-16 rounded-[50%] flex items-center justify-center mt-[-75px] mb-8">
 					<Image
