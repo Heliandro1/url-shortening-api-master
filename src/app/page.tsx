@@ -23,24 +23,24 @@ export default function Home() {
 
 	return (
 		<>
-			{/* <Header /> */}
+			<Header />
 			<main className="w-full bg-[#F0F1F6] flex flex-col gap-8">
-				<section className="bg-white flex flex-col gap-3 w-full md:flex-row-reverse overflow-hidden md:justify-around h-[40rem]">
-					<div className="flex items-center justify-center mr-[-100px] lg:mr-[-215px]">
+				<section className="bg-white flex flex-col gap-3 w-full md:flex-row-reverse overflow-hidden md:justify-around h-[40rem] lg:h-[43rem] items-center">
+					<div className="flex items-center justify-center mr-[-100px] lg:mr-[-215px] max-h-[55%] h-fit ">
 						<Image
 							src="/images/illustration-working.svg"
 							width={100}
 							height={40}
 							alt="Illustration working"
-							className="w-full"
+							className="w-full h-full"
 						/>
 					</div>
 					<div className="flex flex-col items-center justify-center gap-8 md:items-start md:px-8 mb-8 ">
 						<div className="flex flex-col gap-2 lg:max-w-[363px]">
-							<h1 className="text-custom-very-dark-blue text-4xl font-bold text-center md:text-justify">
+							<h1 className="text-custom-very-dark-blue text-4xl font-bold text-center md:text-justify lg:text-5xl">
 								More than just shorter links
 							</h1>
-							<p className="text-custom-gray text-sm text-center md:text-justify">
+							<p className="text-custom-gray text-sm text-center md:text-justify lg:text-lg">
 								Build your brand’s recognition and get detailed
 								insights on how your links are performing.
 							</p>

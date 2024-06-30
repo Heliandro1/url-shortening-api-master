@@ -10,7 +10,7 @@ export const SavedLink = ({ baseURL, shortenURL }: ISavedLinkProps) => {
 			setTimeout(() => {
 				setBtnText("Copy");
 			}, 1000);
-		} catch {
+		} catch(e) {
 			setBtnText("Erro");
 			setTimeout(() => {
 				setBtnText("Copy");
