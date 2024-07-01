@@ -7,29 +7,51 @@ export const Header = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	return (
 		<header className="sticky top-0 flex p-4 w-full bg-white h-20 items-center justify-between">
-			<div className="w-[20%] flex items-center justify-center">
-				<Image
-					src="/images/logo.svg"
-					alt="logo"
-					width={100}
-					height={40}
-				/>
-			</div>
-			<div className="hidden md:flex justify-between w-[80%]">
-				<ul className="flex items-center justify-center text-custom-gray gap-8 w-full font-bold text-sm">
+			<div className="w-[60%] flex md:items-center md:justify-around gap-12">
+				<div className="flex justify-end w-[40%]">
+					<Image
+						src="/images/logo.svg"
+						alt="logo"
+						width={100}
+						height={40}
+					/>
+				</div>
+				<ul className="items-center justify-start text-custom-gray gap-8 font-bold text-sm hidden md:flex w-full">
 					<li>
-						<Link href="#" className="hover:text-custom-very-dark-violet">Features</Link>
+						<Link
+							href="#"
+							className="hover:text-custom-very-dark-violet"
+						>
+							Features
+						</Link>
 					</li>
 					<li>
-						<Link href="#" className="hover:text-custom-very-dark-violet">Pricing</Link>
+						<Link
+							href="#"
+							className="hover:text-custom-very-dark-violet"
+						>
+							Pricing
+						</Link>
 					</li>
 					<li>
-						<Link href="#" className="hover:text-custom-very-dark-violet">Resources</Link>
+						<Link
+							href="#"
+							className="hover:text-custom-very-dark-violet"
+						>
+							Resources
+						</Link>
 					</li>
 				</ul>
-				<ul className="flex items-center justify-center w-full gap-4 text-sm">
+			</div>
+			<div className="hidden md:flex justify-between w-[30%]">
+				<ul className="flex items-center justify-center w-full gap-7 text-sm">
 					<li>
-						<Link href="#" className="hover:text-custom-very-dark-violet font-bold text-custom-gray">Login</Link>
+						<Link
+							href="#"
+							className="hover:text-custom-very-dark-violet font-bold text-custom-gray"
+						>
+							Login
+						</Link>
 					</li>
 					<li className="w-24 h-10">
 						<Link
