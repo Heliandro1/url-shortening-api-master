@@ -4,24 +4,45 @@ import { Footer } from "./components/Footer";
 import Link from "next/link";
 import { CardsSection } from "./components/CardsSection";
 import { SavedLink } from "./components/SavedLink";
-import { SyntheticEvent, useRef, useState } from "react";
+import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import { shortenURL } from "@/utils/api/shorten";
+import { storage } from "@/utils/storage/local-storage";
 
 export default function Home() {
 	const [url, setUrl] = useState("");
 	const [isInvalid, setIsInvalid] = useState(false);
+	const [links, setLinks] = useState<any[]>([]);
+	const [btnText, setBtnText] = useState("Shorten it!");
 	const inputRef = useRef<HTMLInputElement>(null);
 	const mutation = useMutation({
 		mutationFn: shortenURL,
 		onSuccess: (data) => {
-			console.log(data)
+			storage.saveLink({
+				baseURL: data?.url,
+				shortenURL: data?.shrtlnk,
+			});
+			setLinks([
+				{
+					baseURL: data?.url,
+					shortenURL: data?.shrtlnk,
+				},
+				...links,
+			]);
+			setUrl("");
+			setBtnText("Shorten it!");
 		},
-		onError: (error) => {
-			console.log(error)
-		} 
-	})
+		onError: () => {
+			setBtnText("Erro!");
+			setTimeout(() => {
+				setBtnText("Shorten it!");
+			}, 1000);
+		},
+		onMutate: () => {
+			setBtnText("Shortening...");
+		},
+	});
 	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (url.trim() === "") {
@@ -31,6 +52,11 @@ export default function Home() {
 			setIsInvalid(true);
 		} else mutation.mutate(url);
 	};
+	useEffect(() => {
+		setLinks(storage.getSavedLinks());
+		console.log(links);
+		return () => {};
+	}, []);
 
 	return (
 		<>
@@ -105,16 +131,21 @@ export default function Home() {
 								className={`rounded-md text-white font-bold text-sm h-10 w-full bg-custom-cyan`}
 								type="submit"
 							>
-								Shorten It!
+								{btnText}
 							</button>
 						</div>
 					</form>
 				</section>
-				<section className="px-4 w-full flex felx-col items-center justify-center">
-					<SavedLink
-						baseURL="https://alkskosksok.comok.coakosl.comok.cokdimisiasojsijaoisjioajsoijsioajsijasoijosjioasjiojass"
-						shortenURL="https://ajsosokos.com.osokoskoka"
-					/>
+				<section className="px-4 w-full flex flex-col items-center justify-center gap-4">
+					{links.length > 0
+						? links.map((item, index) => (
+								<SavedLink
+									baseURL={String(item?.baseURL)}
+									shortenURL={String(item?.shortenURL)}
+									key={index}
+								/>
+						  ))
+						: null}
 				</section>
 				<section className="w-full flex flex-col items-center justify-center gap-4 mt-8">
 					<h1 className="text-2xl text-custom-very-dark-blue font-bold">
