@@ -6,11 +6,22 @@ import { CardsSection } from "./components/CardsSection";
 import { SavedLink } from "./components/SavedLink";
 import { SyntheticEvent, useRef, useState } from "react";
 import Image from "next/image";
+import { useMutation } from "@tanstack/react-query";
+import { shortenURL } from "@/utils/api/shorten";
 
 export default function Home() {
 	const [url, setUrl] = useState("");
 	const [isInvalid, setIsInvalid] = useState(false);
 	const inputRef = useRef<HTMLInputElement>(null);
+	const mutation = useMutation({
+		mutationFn: shortenURL,
+		onSuccess: (data) => {
+			console.log(data)
+		},
+		onError: (error) => {
+			console.log(error)
+		} 
+	})
 	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (url.trim() === "") {
@@ -18,7 +29,7 @@ export default function Home() {
 			inputRef.current?.classList.add("border-custom-red");
 			inputRef.current?.classList.add("border");
 			setIsInvalid(true);
-		}
+		} else mutation.mutate(url);
 	};
 
 	return (
@@ -33,6 +44,7 @@ export default function Home() {
 							height={40}
 							alt="Illustration working"
 							className="w-full h-full"
+							priority
 						/>
 					</div>
 					<div className="flex flex-col items-center justify-center gap-8 md:items-start md:px-8 mb-8 ">
