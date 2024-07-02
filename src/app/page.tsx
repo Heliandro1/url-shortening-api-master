@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import { shortenURL } from "@/utils/api/shorten";
 import { storage } from "@/utils/storage/local-storage";
+import { validateURL } from "@/utils/validate";
 
 export default function Home() {
 	const [url, setUrl] = useState("");
@@ -45,7 +46,7 @@ export default function Home() {
 	});
 	const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		if (url.trim() === "") {
+		if (!validateURL(url)) {
 			inputRef.current?.classList.add("placeholder-custom-red");
 			inputRef.current?.classList.add("border-custom-red");
 			inputRef.current?.classList.add("border");
@@ -122,7 +123,7 @@ export default function Home() {
 							/>
 							{isInvalid && (
 								<p className="text-xs text-custom-red">
-									<i>Please add a link</i>
+									<i>Please add a valid link</i>
 								</p>
 							)}
 						</div>
